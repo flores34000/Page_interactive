@@ -66,13 +66,49 @@ header.addEventListener('dblclick', function(){
 
 
 // Fonctionnalité 6 :
-var btnview = document.querySelectorAll(".btn-success")[0]
-var paraCard = document.querySelectorAll(".card-text")[0]
-var imgCard = document.querySelectorAll('.card-img-top')[0]
+var btnview = document.querySelectorAll(".btn-success")
+var paraCard = document.querySelectorAll(".card-text")
+var imgCard = document.querySelectorAll(".card-img-top")
 
-btnview.addEventListener('mouseover', function(){
-    console.log('coucou')
+
+
+
+
+
+for(let i = 0; i< btnview.length ; i++){
+
+        btnview[i].addEventListener('mouseover', function(){
+
+        if(imgCard[i].style.width === '20%'){
+            paraCard[i].style.display = ''
+            imgCard[i].style.width = '100%'
+        }else{
+            paraCard[i].style.display = 'none'
+            imgCard[i].style.width = '20%'
+        }
+    })
+    }
+
+   
     
+// Fonctionnalité 7 :
+var btnGrey = document.querySelector(".btn-secondary")
+var containerCard = document.querySelector(".album .row")
+
+
+btnGrey.addEventListener("click",function(){
+    containerCard.insertBefore(containerCard.lastElementChild, containerCard.firstElementChild)
+
 })
 
-console.log(paraCard)
+
+// Fonctionnalité 8 :
+var btnBlue = document.querySelector(".btn-primary")
+
+btnBlue.addEventListener("click",function(){
+    btnBlue.href = ""
+    containerCard.nextSibling(containerCard.lastElementChild, containerCard.firstElementChild)
+
+})
+
+console.log(btnBlue)
